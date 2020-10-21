@@ -5,6 +5,7 @@ import { join } from 'path';
 async function main() {
   await ngPackagr()
     .forProject(join(process.cwd(), 'src/lib/picker/package.json'))
+    .withTsConfig(join(process.cwd(), 'tsconfig.base.json'))
     .build();
 
   copyFileSync(
